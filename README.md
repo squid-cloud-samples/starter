@@ -35,7 +35,6 @@ Complete the environment setup with the following steps, ensuring you're in the 
 ```bash
 $ npm run copy-squid-dotenv
 > backend@0.0.1 copy-dotenv-file
-> node -e "const fs = require('fs'); const path = require('path'); const srcPath = '.env'; const destPath = path.join('..', 'frontend', '.env.local'); fs.readFile(srcPath, 'utf8', (err, data) => { if (err) { console.error('The \\\".env\\\" file does not exist. Go to a Squid application in https://console.squid.cloud and click the \\\"Create .env file\\\" for more instructions'); } else { const prefixedData = data.split(/\\r?\\n/).filter(line => line.trim() && !line.startsWith('SQUID_API_KEY')).map(line => 'VITE_' + line).join('\n'); fs.writeFile(destPath, prefixedData, (err) => { if (err) { console.error(err); } else { console.log('File was copied successfully'); } }); } });"
 
 File was copied successfully
 ```
@@ -82,3 +81,9 @@ Verify that Vite server has started, providing URLs to access your app:
 ## Exploring Your Squid Application
 
 With both servers running, visit [http://localhost:5173/](http://localhost:5173/) in your web browser. You're now ready to experiment with the count button and explore the functionalities of your Squid Cloud application.
+
+
+### Resetting The Counter
+
+The Squid application in this project also introduces a webhook that can be used to reset the counter. The webhook full URL from your local environment should be displayed in the output of the `squid start` command (used to start the local Backend Server). Simply accessing that URL will reset the counter.
+
