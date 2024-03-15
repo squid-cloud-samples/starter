@@ -8,7 +8,7 @@ For this project you will need:
 
 - NodeJS v18 or later.
 - [Vite](https://vitejs.dev/).
-- A Squid Cloud account and a Squid application created. (Go to [Squid Console](https://console.squid.cloud) to signup and create one if you haven't already).
+- A Squid Cloud account and a Squid application created. (Go to [Squid Cloud Console](https://console.squid.cloud) to signup and create one if you haven't already).
 - Squid Cloud CLI (`npm i @squidcloud/cli`).
 
 
