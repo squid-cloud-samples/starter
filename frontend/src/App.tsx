@@ -1,4 +1,4 @@
-import squidLogo from '/Squid-Symbol-Dark.svg';
+import squidLogo from '/squid.svg';
 import './App.css';
 import { useCollection, useDoc } from '@squidcloud/react';
 
