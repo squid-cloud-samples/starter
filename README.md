@@ -101,3 +101,7 @@ Check your terminal logs for the following line:
 | Webhook URL for resetCounter: https://YOUR_APP_ID-dev-YOUR_SQUID_DEVELOPER_ID.us-east-1.aws.squid.cloud/webhooks/resetCounter   |
 ...
 ```
+
+## Next steps
+
+To learn more about Squid's real-time data capabilities, view the [Client SDK documentation](https://docs.squid.cloud/docs/development-tools/client-sdk/). To find out how to integrate with your own data sources, view the [Database integrations documentation](https://docs.squid.cloud/docs/integrations/database/)
