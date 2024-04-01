@@ -1,26 +1,25 @@
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import { useCollection, useDoc } from '@squidcloud/react'
+import squidLogo from '/squid.svg';
+import './App.css';
+import { useCollection, useDoc } from '@squidcloud/react';
 
 type CounterDocument = {
   count: number;
-}
+};
 
 function App() {
   const collection = useCollection<CounterDocument>('count');
-  const { data } = useDoc(collection.doc('count'), {
-    subscribe: true,
-  });
+  const { data } = useDoc(collection.doc('count'));
+
+  async function handleClick() {
+    const count = (data?.count || 0) + 1;
+    await collection.doc('count').insert({ count });
+  }
 
   return (
     <>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
+        <a href="https://docs.squid.cloud" target="_blank">
+          <img src={squidLogo} className="logo" alt="Squid Cloud logo" />
         </a>
       </div>
       <h1>Vite + React</h1>
@@ -28,19 +27,9 @@ function App() {
         <button onClick={() => handleClick()}>
           count is {data?.count || 0}
         </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
-
-  async function handleClick() {
-    await collection.doc('count').insert({ count: (data?.count || 0) + 1 });
-  }
+  );
 }
 
-export default App
+export default App;
