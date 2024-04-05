@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "template-finish-setup": "npm run copy-dotenv-file",
     "copy-dotenv-file": "node -e \"const fs = require('fs'); const path = require('path'); const srcPath = '.env'; const destPath = path.join('..', 'frontend', '.env.local'); fs.readFile(srcPath, 'utf8', (err, data) => { if (err) { console.error('The \\\\\\\".env\\\\\\\" file does not exist. Go to a Squid application in https://console.squid.cloud and click the \\\\\\\"Create .env file\\\\\\\" for more instructions'); } else { const prefixedData = data.split(/\\\\r?\\\\n/).filter(line => line.trim() && !line.startsWith('SQUID_API_KEY')).map(line => 'VITE_' + line).join('\\n'); fs.writeFile(destPath, prefixedData, (err) => { if (err) { console.error(err); } else { console.log('File was copied successfully'); } }); } });\"",
     "prebuild": "rimraf dist",
     "build": "webpack --mode=production",
