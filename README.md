@@ -37,10 +37,10 @@ squid init-env \
 
 ### Finalizing setup
 
-Complete the environment setup with the following steps, ensuring you're in the `backend` directory:
+Open a new terminal window and navigate to the `frontend` directory. You should now have two terminal windows open: one in which you will run the local backend server, and one in which you will run the frontend. Complete the environment setup with the following steps, ensuring you're in the `frontend` directory:
 
 ```bash
-npm run copy-squid-dotenv
+npm run setup-env
 ```
 
 This command prepares your `.env` file for the Vite environment by generating a `frontend/.env.local` file.
@@ -64,10 +64,9 @@ You'll see output similar to the following, indicating that your server is up an
 
 ### Launching the frontend server
 
-Open a second terminal window. You should now have two terminal windows open: one running the local backend server, and one in which you will run the frontend. Initialize the frontend server by running the following commands:
+Initialize the frontend server by running the following commands in the `frontend` directory:
 
 ```bash
-cd frontend
 npm install
 npm run dev
 ```
