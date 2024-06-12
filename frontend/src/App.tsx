@@ -8,7 +8,7 @@ type CounterDocument = {
 
 function App() {
   const collection = useCollection<CounterDocument>('count');
-  const { data } = useDoc(collection.doc('count'));
+  const { data, loading } = useDoc(collection.doc('count'));
 
   async function handleClick() {
     const count = (data?.count || 0) + 1;
@@ -22,11 +22,11 @@ function App() {
           <img src={squidLogo} className="logo" alt="Squid Cloud logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <h1>Squid + Vite + React</h1>
       <div className="card">
-        <button onClick={() => handleClick()}>
+        {!loading && <button onClick={() => handleClick()}>
           count is {data?.count || 0}
-        </button>
+        </button>}
       </div>
     </>
   );
