@@ -4,11 +4,12 @@
   "version": "0.0.0",
   "scripts": {
     "start": "samples start",
-    "format": "prettier --write \"./**/src/**/*{ts,js,tsx,jsx,md,mdx}\""
+    "build": "npm run build --workspaces",
+    "format": "prettier . --write"
   },
   "devDependencies": {
-    "prettier": "^3.2.5",
-    "@squidcloud/samples": "^1.0.9"
+    "@squidcloud/samples": "^1.0.11",
+    "prettier": "^3.2.5"
   },
   "workspaces": [
     "frontend",
