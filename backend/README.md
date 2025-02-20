@@ -35,3 +35,9 @@ In conclusion, the Squid Backend code has extensive power and flexibility, makin
 need to build complex backend functionality for their applications.
 
 For more information, see the [documentation](https://docs.squid.cloud/docs/backend/)
+
+## Additional Shell Commands
+
+You can use `squid --help` to view a list of additional commands.
+These commands allow you to perform various actions, such as checking different samples,
+customizing the Webpack build configuration, or undeploying your app from the cloud.
